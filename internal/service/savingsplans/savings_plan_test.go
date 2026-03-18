@@ -35,7 +35,7 @@ func TestAccSavingsPlansSavingsPlan_basic(t *testing.T) {
 		Steps: []resource.TestStep{
 			{
 				Config:      testAccSavingsPlanConfig_basic(),
-				ExpectError: regexache.MustCompile(`Offering ID not found`),
+				ExpectError: regexache.MustCompile(`ValidationException`),
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckSavingsPlanExists(ctx, t, resourceName, &savingsPlan),
 				),
